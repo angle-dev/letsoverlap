@@ -1,9 +1,11 @@
-import Image from "next/image";
+"use client";
+
+import HomeBanner from "./HomeBanner";
 
 export default function Home() {
   return (
     <main>
-      <h1 className=" font-serif text-primary-yellow">heading</h1>
+      <HomeBanner />
     </main>
   );
 }
