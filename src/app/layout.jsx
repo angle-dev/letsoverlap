@@ -1,5 +1,5 @@
 import "./globals.css";
-import PreLayout from "./Prelayout";
+import PreLayout from "./PreLayout";
 
 export default function RootLayout({ children }) {
   return (
