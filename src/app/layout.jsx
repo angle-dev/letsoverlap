@@ -4,9 +4,11 @@ import PreLayout from "./Prelayout";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <PreLayout>
-        <body>{children}</body>
-      </PreLayout>
+      <body>
+        <PreLayout>
+          <main>{children}</main>
+        </PreLayout>
+      </body>
     </html>
   );
 }

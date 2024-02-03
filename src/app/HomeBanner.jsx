@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 import useWindowSize from "./useWindowSize";
-
-import { Banner, Video, BannerTitle, Canvas, Headline } from "./homeStyles";
 
 const HomeBanner = () => {
   const size = useWindowSize();
@@ -11,7 +10,6 @@ const HomeBanner = () => {
 
   useEffect(() => {
     let renderingElement = canvas.current;
-    // create an offscreen canvas only for the drawings
     let drawingElement = renderingElement.cloneNode();
     let drawingCtx = drawingElement.getContext("2d");
     let renderingCtx = renderingElement.getContext("2d");
@@ -20,7 +18,7 @@ const HomeBanner = () => {
     let moving = false;
 
     renderingCtx.globalCompositeOperation = "source-over";
-    renderingCtx.fillStyle = "#000000";
+    renderingCtx.fillStyle = "#0A1E2E";
     renderingCtx.fillRect(0, 0, size.width, size.height);
 
     renderingElement.addEventListener("mouseover", (ev) => {
@@ -58,7 +56,7 @@ const HomeBanner = () => {
         renderingCtx.drawImage(drawingElement, 0, 0);
       }
     });
-  }, []);
+  }, [size.height, size.width]);
 
   const container = {
     initial: { y: 800 },
@@ -81,17 +79,69 @@ const HomeBanner = () => {
   };
 
   return (
-    <Banner>
-      <Video>
-        <video height="100%" width="100%" loop autoPlay src="./hero.mp4" />
-      </Video>
-      <Canvas height={size.height} width={size.width} ref={canvas} />
-      <BannerTitle variants={container} initial="initial" animate="animate">
-        <Headline variants={item}>Some</Headline>
-        <Headline variants={item}>Creative</Headline>
-        <Headline variants={item}>Text</Headline>
-      </BannerTitle>
-    </Banner>
+    <div className=" h-screen w-full   bg-primary-navy">
+      <div className="  w-full h-full absolute top-0 left-0">
+        <div className=" h-full  w-full ">
+          <video
+            className="object-cover  h-full  w-full "
+            loop
+            muted
+            autoPlay
+            src="./hero.mp4"
+          />
+        </div>
+        <canvas
+          className="absolute block top-0 left-0 h-full"
+          height={size.height}
+          width={size.width}
+          ref={canvas}
+        />
+      </div>
+      <div className=" h-full flex flex-col justify-between pointer-events-none w-full absolute top-0">
+        <div className=" flex mt-4  justify-between w-full p-3  text-primary-white text-sm">
+          <div className=" w-2 h-2 pointer-events-none"></div>
+          <div className=" max-w-sm">
+            <span className="  font-bold">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </span>
+            <br />
+            <span>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&rsquo;s standard dummy
+              text ever since the 1500s.
+            </span>
+          </div>
+        </div>
+        <div>
+          <motion.h1
+            className="  font-serif text-7xl md:text-[9rem] lg:text-[11rem] ml-4  pointer-events-none"
+            variants={container}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.span
+              className=" block font-bold  text-primary-red  "
+              variants={item}
+            >
+              Some
+            </motion.span>
+            <motion.span
+              className=" block   font-bold italic text-primary-green  "
+              variants={item}
+            >
+              Creative
+            </motion.span>
+            <motion.span
+              className=" block     font-bold  text-primary-yellow  "
+              variants={item}
+            >
+              Text
+            </motion.span>
+          </motion.h1>
+        </div>
+      </div>
+    </div>
   );
 };
 
