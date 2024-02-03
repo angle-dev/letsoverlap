@@ -6,6 +6,7 @@ import {
   useTransform,
   animate,
   useAnimation,
+  AnimatePresence,
 } from "framer-motion";
 
 export default function PreLayout({ children }) {
@@ -34,42 +35,64 @@ export default function PreLayout({ children }) {
         opacity: 1,
         scaleX: 1,
         x: "0vw",
-        duration: 3.5,
+        duration: 3,
       });
+      await controlsLogo.start({ opacity: 0, duration: 0.2 });
+      setTimeout(() => {
+        setLoading(false);
+      }, 350);
     };
 
     sequence();
-    return () => controlsPercentage.stop();
+    return () => {
+      controlsBackground.stop();
+      controlsLogo.stop();
+      controlsPercentage.stop();
+    };
   }, []);
 
+  const exitAnimation = {
+    opacity: 1,
+    scaleX: 0.1,
+    x: "90vw",
+    transition: { duration: 0.5 },
+  };
   return (
-    <div>
-      <div className="absolute flex items-center justify-center z-50 h-screen w-full bg-primary-navy">
-        <div className=" absolute z-40 flex flex-col items-center justify-center gap-4">
-          <motion.img
-            animate={controlsLogo}
-            className=" h-16 opacity-0"
-            src="./Logo.png"
-          />
-          <motion.div
-            animate={controlsPercentage}
-            className=" font-serif text-8xl font-bold  text-primary-red"
-          >
-            <motion.span>{rounded}</motion.span>
-            <span>%</span>
-          </motion.div>
-        </div>
+    <AnimatePresence>
+      {loading ? (
         <motion.div
-          animate={controlsBackground}
-          className=" absolute opacity-0 z-30 flex w-full h-screen"
+          key="background"
+          exit={exitAnimation}
+          className="absolute overflow-hidden flex items-center justify-center z-50 h-screen w-full bg-primary-navy"
         >
-          <motion.div className=" w-full h-screen  bg-primary-navy" />
-          <motion.div className=" w-full h-screen  bg-primary-yellow" />
-          <motion.div className=" w-full h-screen  bg-primary-green" />
-          <motion.div className=" w-full h-screen  bg-primary-red" />
+          <div className=" absolute h-96 z-40 flex flex-col items-center justify-center gap-4">
+            <motion.img
+              animate={controlsLogo}
+              className=" h-16 opacity-0"
+              src="./Logo.png"
+            />
+            <motion.div
+              animate={controlsPercentage}
+              className=" font-serif text-8xl font-bold  text-primary-red"
+            >
+              <motion.span>{rounded}</motion.span>
+              <span>%</span>
+            </motion.div>
+          </div>
+
+          <motion.div
+            animate={controlsBackground}
+            className=" absolute opacity-0 z-30 flex w-full h-full"
+          >
+            <motion.div className=" w-full h-full  bg-primary-navy" />
+            <motion.div className=" w-full h-full   bg-primary-yellow" />
+            <motion.div className=" w-full h-full   bg-primary-green" />
+            <motion.div className=" w-full h-full   bg-primary-red" />
+          </motion.div>
         </motion.div>
-      </div>
-      {children}
-    </div>
+      ) : (
+        <>{children}</>
+      )}
+    </AnimatePresence>
   );
 }

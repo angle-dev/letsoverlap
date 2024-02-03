@@ -79,7 +79,7 @@ const HomeBanner = () => {
   };
 
   return (
-    <div className=" h-screen w-full   bg-primary-navy">
+    <div className=" relative h-screen w-full  overflow-hidden  bg-primary-navy">
       <div className="  w-full h-full absolute top-0 left-0">
         <div className=" h-full  w-full ">
           <video
@@ -91,27 +91,16 @@ const HomeBanner = () => {
           />
         </div>
         <canvas
-          className="absolute block top-0 left-0 h-full"
+          className="absolute block top-0 left-0 h-screen w-full"
           height={size.height}
           width={size.width}
           ref={canvas}
         />
       </div>
       <div className=" h-full flex flex-col justify-between pointer-events-none w-full absolute top-0">
-        <div className=" flex mt-4  justify-between w-full p-3  text-primary-white text-sm">
+        <div className=" flex mt-4  justify-between  w-11/12 p-3  text-primary-white text-sm">
           <div className=" w-2 h-2 pointer-events-none"></div>
-          <div className=" max-w-sm">
-            <span className="  font-bold">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </span>
-            <br />
-            <span>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&rsquo;s standard dummy
-              text ever since the 1500s.
-            </span>
-          </div>
+          <div className=" max-w-sm"></div>
         </div>
         <div>
           <motion.h1
