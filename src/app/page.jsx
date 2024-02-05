@@ -9,6 +9,7 @@ import {
   useAnimation,
 } from "framer-motion";
 import Contact from "./Contact";
+import Team from "./Team";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -351,7 +352,15 @@ export default function Home() {
               {menuSelected === "contact" && <Contact />}
             </div>
             <div className="bg-primary-white w-full h-[400px] flex items-center whitespace-nowrap justify-center ">
-              {menu && <span className=" absolute -rotate-90">Our Team</span>}
+              {menuSelected !== "contact" && (
+                <>
+                  {menu && (
+                    <span className=" absolute -rotate-90">Our Team</span>
+                  )}
+                </>
+              )}
+
+              {menuSelected === "contact" && <Team />}
             </div>
           </motion.div>
         </motion.div>
@@ -407,9 +416,16 @@ export default function Home() {
             </div>
             <motion.div
               animate={mobileChildTeam}
+              onClick={() => mobilesetMenuSelected("contact")}
               className="bg-primary-white h-full  w-[200px] flex items-center whitespace-nowrap justify-center "
             >
-              <span className=" absolute ">Our Team</span>
+              <div className="bg-primary-white w-full h-full flex items-center justify-center">
+                {mobilemenuSelected !== "contact" && (
+                  <span className=" absolute ">Our Team</span>
+                )}
+
+                {mobilemenuSelected === "contact" && <Team />}
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>
