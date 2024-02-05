@@ -49,6 +49,8 @@ export default function PreLayout({ children }) {
       controlsLogo.stop();
       controlsPercentage.stop();
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const exitAnimation = {
