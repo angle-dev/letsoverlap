@@ -61,7 +61,7 @@ export default function PreLayout({ children }) {
   };
   return (
     <AnimatePresence>
-      {loading ? (
+      {/* {loading ? (
         <motion.div
           key="background"
           exit={exitAnimation}
@@ -93,8 +93,10 @@ export default function PreLayout({ children }) {
           </motion.div>
         </motion.div>
       ) : (
-        <>{children}</>
-      )}
+        
+      )} */}
+
+      <>{children}</>
     </AnimatePresence>
   );
 }
