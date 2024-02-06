@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import Contact from "./Contact";
 import Team from "./Team";
+import Services from "./Services";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -332,7 +333,15 @@ export default function Home() {
             className=" w-full h-full flex flex-col text-3xl font-bold "
           >
             <div className="bg-primary-green w-full h-full flex items-center justify-center">
-              {menu && <span className=" absolute -rotate-90">Services</span>}
+              {menuSelected !== "services" && (
+                <>
+                  {menu && (
+                    <span className=" absolute -rotate-90">Services</span>
+                  )}
+                </>
+              )}
+
+              {menuSelected === "services" && <Services />}
             </div>
           </motion.div>
           <motion.div
@@ -399,7 +408,11 @@ export default function Home() {
             className=" w-full h-full flex flex-col text-lg font-bold "
           >
             <div className="bg-primary-green w-full h-full flex items-center justify-center">
-              <span className=" absolute ">Services</span>
+              {mobilemenuSelected !== "services" && (
+                <span className=" absolute ">Services</span>
+              )}
+
+              {mobilemenuSelected === "services" && <Services />}
             </div>
           </motion.div>
           <motion.div

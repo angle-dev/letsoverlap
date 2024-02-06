@@ -17,62 +17,66 @@ const Contact = () => {
           </span>
 
           <form className=" flex flex-col p-9">
-            <div className="col-span-1 ">
+            <div className=" ">
               <input
                 type="text"
                 placeholder="Hi my name is...."
-                className="p-2  w-[70%] rounded-t-xl  placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray opacity-100"
+                className="p-2  w-[70%] rounded-t-xl placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray opacity-100"
               />
             </div>
-            <div className="col-span-1"></div>
-            <div className="col-span-1 opacity-90">
+            <div className=""></div>
+            <div className=" opacity-90">
               <input
                 type="email"
                 placeholder="My email is...."
-                className="p-2 w-[70%] text-primary-gray"
+                className="p-2 w-[70%] placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray"
               />
             </div>
-            <div className="col-span-1"></div>
-            <div className="col-span-1 opacity-80">
+            <div className=""></div>
+            <div className=" opacity-80 placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray">
               <input
                 type="tel"
                 placeholder="You can call me on...."
-                className="p-2 w-[70%] text-primary-gray"
+                className="p-2 w-[70%] placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray"
               />
             </div>
-            <div className="col-span-1"></div>
-            <div className="col-span-1 flex w-full ">
+            <div className=""></div>
+            <div className=" flex w-full ">
               <input
                 type="text"
                 placeholder="The subject of this...."
-                className="p-2 text-primary-gray w-[70%] opacity-70 "
+                className="p-2 text-primary-gray placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray w-[70%] opacity-70 "
               />
 
               <button
                 type="submit"
-                className="bg-primary-navy h-[52px] w-[30%] rounded-tr-xl text-white "
+                className="bg-primary-navy text-sm h-[52px] w-[30%] font-normal rounded-tr-xl text-white "
               >
                 Send
               </button>
             </div>
 
-            <div className="col-span-2 opacity-60">
+            <div className=" opacity-60">
               <textarea
                 placeholder="To tell you in details..."
                 rows="4"
-                className="p-2 w-[550px] rounded-b-xl opacity-100 text-primary-gray"
+                className="p-2 w-[550px] rounded-b-xl opacity-100 placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray"
               ></textarea>
             </div>
           </form>
         </div>
         <div className="flex flex-col">
-          <span className="text-xs text-primary-navy p-9 font-bold">
+          <span className="text-xs font-normal text-primary-navy p-9">
             Lorem Ipsum is simply dummy <br /> text of the printing and <br />
             typesetting industry. Lorem <br /> Ipsum has been the <br />
             industry’s standard .
           </span>
-          <span className="text-xs text-primary-navy p-9">Email</span>
-          <span className="text-xs text-primary-navy p-9">Phone</span>
+          <span className="text-xs font-normal text-primary-navy p-9">
+            Email
+          </span>
+          <span className="text-xs font-normal text-primary-navy p-9">
+            Phone
+          </span>
 
           {/* Social Media Icons */}
           {/* You can replace these with actual icons */}
