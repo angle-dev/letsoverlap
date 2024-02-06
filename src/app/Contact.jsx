@@ -9,19 +9,19 @@ const Contact = () => {
           <span className="text-4xl text-primary-navy p-9 font-bold">
             Let’s get in touch
           </span>
-          <span className="text-4xl text-primary-navy p-9">
+          <span className="text-4xl  font-normal text-primary-navy p-9">
             We can build something <br />
-            <span className="text-primary-white font-serif italic ">
+            <span className="text-primary-white font-serif font-bold italic ">
               great together
             </span>
           </span>
 
-          <form className="grid grid-cols-2 p-9">
+          <form className=" flex flex-col p-9">
             <div className="col-span-1 ">
               <input
                 type="text"
                 placeholder="Hi my name is...."
-                className="p-2 rounded-t-xl text-primary-gray opacity-100"
+                className="p-2  w-[70%] rounded-t-xl  placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray opacity-100"
               />
             </div>
             <div className="col-span-1"></div>
@@ -29,7 +29,7 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="My email is...."
-                className="p-2 text-primary-gray"
+                className="p-2 w-[70%] text-primary-gray"
               />
             </div>
             <div className="col-span-1"></div>
@@ -37,25 +37,25 @@ const Contact = () => {
               <input
                 type="tel"
                 placeholder="You can call me on...."
-                className="p-2 text-primary-gray"
+                className="p-2 w-[70%] text-primary-gray"
               />
             </div>
             <div className="col-span-1"></div>
-            <div className="col-span-1 opacity-70">
+            <div className="col-span-1 flex w-full ">
               <input
                 type="text"
                 placeholder="The subject of this...."
-                className="p-2 text-primary-gray"
+                className="p-2 text-primary-gray w-[70%] opacity-70 "
               />
-            </div>
-            <div className="col-span-1 ">
+
               <button
                 type="submit"
-                className="bg-primary-navy h-[52px] w-[148px] rounded-tr-xl text-white "
+                className="bg-primary-navy h-[52px] w-[30%] rounded-tr-xl text-white "
               >
                 Send
               </button>
             </div>
+
             <div className="col-span-2 opacity-60">
               <textarea
                 placeholder="To tell you in details..."
