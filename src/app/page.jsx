@@ -135,7 +135,7 @@ export default function Home() {
           width: "200px",
         });
         mobileChildTeam.start({
-          height: "150px",
+          height: "140px",
           width: "100%",
         });
         await mobilecontrolContact.start({
@@ -242,10 +242,15 @@ export default function Home() {
       <div onClick={() => setMenu(false)} className=" w-full block md:hidden">
         {menuSelected === "home" && <HomeBanner />}
       </div>
-      <div className="   overflow-hidden flex md:flex-row flex-col-reverse  right-0 absolute h-full justify-end  pointer-events-none md:gap-5 gap-2 w-full">
+      <div
+        className={`   overflow-hidden sm flex md:flex-row flex-col-reverse  right-0 absolute h-full justify-end  pointer-events-none 
+      
+      ${menuSelected === "home" ? "md:gap-5 gap-2" : ""}
+      w-full`}
+      >
         <div className=" hidden md:block ">
           {menuSelected === "home" && (
-            <div className="text-primary-white md:text-base flex flex-col justify-between items-end  text-sx  md:max-w-sm  max-w-60 mt-4 pointer-events-none ">
+            <div className="text-primary-white h-full md:text-base flex flex-col justify-between items-end  text-sx  md:max-w-sm  max-w-60 mt-4 pointer-events-none ">
               <div>
                 <span className=" text-primary-white  font-bold">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -308,7 +313,7 @@ export default function Home() {
                 setMenuSelected("home");
                 setMenu(false);
               }}
-              className="  bg-purple-100  w-[250px] h-full"
+              className="  bg-black w-full  max-w-[250px] h-full"
             ></div>
           )}
           <motion.div
@@ -384,7 +389,7 @@ export default function Home() {
                 mobilesetMenuSelected("home");
                 mobilesetMenu(false);
               }}
-              className="  bg-purple-100   h-[40px] w-full"
+              className="  bg-black   h-[40px] w-full"
             ></div>
           )}
           <motion.div
@@ -420,7 +425,7 @@ export default function Home() {
             onClick={() => mobilesetMenuSelected("contact")}
             className=" w-full h-full  flex  text-lg font-bold"
           >
-            <div className="bg-primary-red w-full h-full flex items-center justify-center">
+            <div className="bg-primary-red w-full h-full overflow-y-auto flex items-center justify-center">
               {mobilemenuSelected !== "contact" && (
                 <span className=" absolute ">Contact</span>
               )}
@@ -432,7 +437,7 @@ export default function Home() {
               onClick={() => mobilesetMenuSelected("contact")}
               className="bg-primary-white h-full  w-[200px] flex items-center whitespace-nowrap justify-center "
             >
-              <div className="bg-primary-white w-full h-full flex items-center justify-center">
+              <div className="bg-primary-white w-full  flex items-center justify-center">
                 {mobilemenuSelected !== "contact" && (
                   <span className=" absolute ">Our Team</span>
                 )}

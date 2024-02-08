@@ -3,20 +3,20 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className=" w-full h-full overflow-scroll">
-      <div className="flex mt-12 w-full justify-between">
-        <div className="flex flex-col ">
-          <span className="text-4xl text-primary-navy p-9 font-bold">
+    <div className="  max-h-[calc(100vh-150px)] overflow-y-auto w-full">
+      <div className="flex md:flex-row flex-col mt-2 md:mt-12 w-full gap-2 justify-between">
+        <div className="flex flex-col w-full ">
+          <span className="text-4xl text-primary-navy md:p-9 p-2 font-bold">
             Let’s get in touch
           </span>
-          <span className="text-4xl  font-normal text-primary-navy p-9">
+          <span className="text-4xl  font-normal text-primary-navy p-2 md:p-9">
             We can build something <br />
             <span className="text-primary-white font-serif font-bold italic ">
               great together
             </span>
           </span>
 
-          <form className=" flex flex-col p-9">
+          <form className=" flex w-full flex-col md:p-9 p-2">
             <div className=" ">
               <input
                 type="text"
@@ -60,27 +60,27 @@ const Contact = () => {
               <textarea
                 placeholder="To tell you in details..."
                 rows="4"
-                className="p-2 w-[550px] rounded-b-xl opacity-100 placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray"
+                className="p-2 w-[100%] rounded-b-xl opacity-100 placeholder:font-sans placeholder:font-normal placeholder:text-sm  placeholder:text-primary-gray text-primary-gray"
               ></textarea>
             </div>
           </form>
         </div>
-        <div className="flex flex-col">
-          <span className="text-xs font-normal text-primary-navy p-9">
+        <div className="flex flex-row md:flex-col">
+          <span className="text-xs font-normal text-primary-navy md:p-9 p-2">
             Lorem Ipsum is simply dummy <br /> text of the printing and <br />
             typesetting industry. Lorem <br /> Ipsum has been the <br />
             industry’s standard .
           </span>
-          <span className="text-xs font-normal text-primary-navy p-9">
+          <span className="text-xs font-normal text-primary-navy md:p-9 p-2">
             Email
           </span>
-          <span className="text-xs font-normal text-primary-navy p-9">
+          <span className="text-xs font-normal text-primary-navy md:p-9 p-2">
             Phone
           </span>
 
           {/* Social Media Icons */}
           {/* You can replace these with actual icons */}
-          <div className="mt-6 flex flex-col items-end p-9">
+          <div className="mt-6 flex md:flex-col items-end md:p-9 p-2">
             <Image src="/iconoir_x.png" alt="" width={24} height={24} />
             <Image
               src="/lets-icons_insta.png"
@@ -112,6 +112,10 @@ const Contact = () => {
             />
           </div>
         </div>
+      </div>
+      <div className=" md:hidden">
+        <br />
+        <br />
       </div>
     </div>
   );
