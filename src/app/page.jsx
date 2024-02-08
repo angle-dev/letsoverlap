@@ -11,6 +11,7 @@ import {
 import Contact from "./Contact";
 import Team from "./Team";
 import Services from "./Services";
+import Gallery from "./Gallery";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -325,11 +326,16 @@ export default function Home() {
               {menu && <span className=" absolute -rotate-90">BLOG</span>}
             </div>
             <div className="bg-primary-yellow w-full h-full flex items-center justify-center">
-              {menu && (
-                <span className=" absolute whitespace-nowrap -rotate-90">
-                  Our Work
-                </span>
+              {menuSelected !== "OurWork" && (
+                <>
+                  {menu && (
+                    <span className=" absolute whitespace-nowrap -rotate-90">
+                      Our Work
+                    </span>
+                  )}
+                </>
               )}
+              {menuSelected === "OurWork" && <Gallery />}
             </div>
           </motion.div>
           <motion.div
@@ -404,7 +410,16 @@ export default function Home() {
               <span className=" absolute ">BLOG</span>
             </motion.div>
             <div className="bg-primary-yellow w-full h-full flex items-center justify-center">
-              <span className=" absolute whitespace-nowrap ">Our Work</span>
+              {mobilemenuSelected !== "OurWork" && (
+                <>
+                  {mobilemenu && (
+                    <span className=" absolute whitespace-nowrap -rotate-90">
+                      Our Work
+                    </span>
+                  )}
+                </>
+              )}
+              {mobilemenuSelected === "OurWork" && <Gallery />}
             </div>
           </motion.div>
           <motion.div
