@@ -7,8 +7,8 @@ export default function Team() {
       <span className="text-center w-full flex items-center justify-center text-3xl font-bold">
         What we can do for you
       </span>
-      <div class="flex items-center justify-center p-10">
-        <div class="grid md:grid-cols-2 grid-cols-1 w-full max-w-[900px] ">
+      <div class="grid w-full items-center max-w-[98%]   m-auto justify-items-center p-2">
+        <div class="grid md:grid-cols-2 grid-cols-1 w-full ">
           <div class="flex flex-col bg-primary-white hover:bg-primary-navy text-primary-navy hover:text-[#6AE3F3] p-4 ">
             <Image
               src="/ser1.png"
