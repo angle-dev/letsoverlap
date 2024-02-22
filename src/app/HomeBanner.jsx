@@ -113,19 +113,19 @@ const HomeBanner = () => {
               className=" block font-bold  text-primary-red  "
               variants={item}
             >
-              Some
+              Leadership
             </motion.span>
             <motion.span
               className=" block   font-bold italic text-primary-green  "
               variants={item}
             >
-              Creative
+              Accountability
             </motion.span>
             <motion.span
               className=" block     font-bold  text-primary-yellow  "
               variants={item}
             >
-              Text
+              Passion.
             </motion.span>
           </motion.h1>
         </div>

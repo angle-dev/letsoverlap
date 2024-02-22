@@ -253,15 +253,17 @@ export default function Home() {
           {menuSelected === "home" && (
             <div className="text-primary-white h-full md:text-base flex flex-col justify-between items-end  text-sx  md:max-w-sm  max-w-60 mt-4 pointer-events-none ">
               <div>
-                <span className=" text-primary-white  font-bold">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                <span className=" text-primary-white font-bold">
+                  OVERLAP is a global 360-degree Digital Marketing Agency,
+                  specializing in profitable Digital Marketing solutions for
+                  eBusinesses.
                 </span>
                 <br />
                 <span>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the
-                  industry&rsquo;s standard dummy text ever since the 1500s.
+                  Since 2017, OVERLAP leads in large-scale projects with
+                  innovative digital marketing. Our mission is to enhance
+                  business value through creative and effective use of Digital
+                  Marketing Technologies.
                 </span>
               </div>
 

@@ -18,10 +18,12 @@ export default function Team() {
               className=" pt-7"
             />
             <div className="flex flex-col items-start mt-4">
-              <p className="text-2xl  font-medium">Branding</p>
+              <p className="text-2xl  font-medium">E-Commerce & M-Commerce: </p>
               <p className="text-sm mt-7 font-normal">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard.{" "}
+                We are expert in setting up your online shopping application
+                (E-Commerce), Shopify , Amazon Merchant and various other
+                M-Commerce applications further increasing your client base with
+                our targeted shopping Ads across Globe.{" "}
                 <span className="font-bold">More{">"}</span>
               </p>
             </div>
@@ -36,11 +38,12 @@ export default function Team() {
               className=" pt-7"
             />
             <div className="flex flex-col items-start mt-4">
-              <p className="text-2xl  font-medium">Digital Marketing</p>
+              <p className="text-2xl  font-medium">CMS & CRO</p>
               <p className="text-sm mt-7 font-normal">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard.{" "}
-                <span className="font-bold">More{">"}</span>
+                With extensive CMS deployment experience, we guide you to the
+                ideal CMS for your business. Our specialty lies in cutting-edge
+                conversation retention optimization, ensuring a rich user
+                experience. <span className="font-bold">More{">"}</span>
               </p>
             </div>
           </div>
@@ -56,8 +59,9 @@ export default function Team() {
             <div className="flex flex-col items-start mt-4">
               <p className="text-2xl  font-medium">SEO</p>
               <p className="text-sm mt-7 font-normal">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard.{" "}
+                Offering complete SEO Solutions, and internet Marketing
+                services. We are a leading SEO Company in India, providing
+                effective Search Engine Optimization’s services in right phases{" "}
                 <span className="font-bold">More{">"}</span>
               </p>
             </div>
@@ -72,10 +76,11 @@ export default function Team() {
               className=" pt-7"
             />
             <div className="flex flex-col items-start mt-4">
-              <p className="text-2xl  font-medium">Advertising</p>
+              <p className="text-2xl  font-medium"> Advertising & PR: </p>
               <p className="text-sm mt-7 font-normal">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard.{" "}
+                We help you build your professional relations with your audience
+                & key partners through our Advertising services (Paid social &
+                Google) and if required some Corporate/Social PR services too.
                 <span className="font-bold">More{">"}</span>
               </p>
             </div>

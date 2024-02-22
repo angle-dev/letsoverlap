@@ -67,9 +67,11 @@ const Contact = () => {
         </div>
         <div className="flex flex-row md:flex-col">
           <span className="text-xs font-normal text-primary-navy md:p-9 p-2">
-            Lorem Ipsum is simply dummy <br /> text of the printing and <br />
-            typesetting industry. Lorem <br /> Ipsum has been the <br />
-            industry’s standard .
+            And the list goes on and on! <br /> Let’s collaborate on the macro
+            and
+            <br />
+            micro influencers marketing plans, <br />
+            that will sure be a buzz in the ears. <br />
           </span>
           <span className="text-xs font-normal text-primary-navy md:p-9 p-2">
             Email
