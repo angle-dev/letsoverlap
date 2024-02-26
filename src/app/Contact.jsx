@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="  max-h-[calc(100vh-280px)] h-full overflow-y-auto w-full">
+    <div className="   h-full overflow-y-auto w-full">
       <div className="flex md:flex-row flex-col mt-2 md:mt-12 w-full gap-2 justify-between">
         <div className="flex flex-col w-full ">
           <span className="text-4xl text-primary-navy md:p-9 p-2 font-bold">

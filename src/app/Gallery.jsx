@@ -41,7 +41,7 @@ export default function Gallery() {
   };
 
   return (
-    <div className="   h-full grid  content-center   md:content-start mt-8 w-full">
+    <div className="   h-full grid  content-center    md:content-start mt-2 w-full">
       <div className=" w-[90%] m-auto h-fit flex flex-col items-center ">
         <motion.img
           key={page}

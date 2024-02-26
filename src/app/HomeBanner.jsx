@@ -104,7 +104,7 @@ const HomeBanner = () => {
         </div>
         <div>
           <motion.h1
-            className="  font-serif text-6xl md:text-[9rem] lg:text-[11rem] ml-4  pointer-events-none"
+            className="  font-serif   text-4xl md:text-6xl lg:text-8xl ml-4  pointer-events-none"
             variants={container}
             initial="initial"
             animate="animate"

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <div className="  max-md:max-h-[80vh] overflow-y-auto">
+    <div className="  h-full overflow-y-auto">
       <span className="text-center w-full flex items-center justify-center text-3xl font-bold">
         What we can do for you
       </span>
