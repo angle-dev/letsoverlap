@@ -7,7 +7,7 @@ export default function Team() {
       <div className="grid grid-cols-4 gap-1 p-2 max-h-[150px] w-full  ">
         <div className=" flex flex-col   w-full h-full ">
           <div className="relative  p-3  aspect-[3/5]  w-[90px]  h-[100px]">
-            <Image src={"/Rectangle 22.png"} fill alt="team" />
+            <Image src="/Rectangle 22.png" fill alt="team" />
           </div>
 
           <span className=" font-bold text-sm">Name</span>
@@ -15,7 +15,7 @@ export default function Team() {
         </div>
         <div className=" flex flex-col w-full h-full  ">
           <div className="relative p-3 aspect-[3/5] w-[90px]  h-[100px]">
-            <Image src={"/Rectangle 22.png"} fill alt="team" />
+            <Image src="/Rectangle 22.png" fill alt="team" />
           </div>
           <span className=" font-bold text-sm">Name</span>
           <span className="  text-sm">Designation</span>

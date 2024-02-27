@@ -64,7 +64,7 @@ export default function Home() {
                   setMenuScreens("home");
                   setMenu(false);
                 }}
-                className=" pointer-events-auto cursor-pointer group md:w-60 md:h-full w-full h-32  bg-black"
+                className=" pointer-events-auto cursor-pointer group md:w-60 md:h-full w-full h-16  bg-black"
               ></div>
             )}
             <div
@@ -79,22 +79,36 @@ export default function Home() {
                       ? "group md:w-20 md:h-full w-full h-14 "
                       : "md:w-4  group md:hover:w-20 md:h-full w-full h-14 "
                     : menuScreens === "work"
-                    ? "group w-full h-full max-md:max-h-[calc(100vh-15rem)] "
+                    ? "group w-full h-full max-md:max-h-[calc(100vh-11rem)] "
                     : "group md:w-20 md:h-full w-full h-14 "
                 }
                 `}
             >
               {menuScreens === "home" ? (
                 menu ? (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                    <div className=" bg-white md:w-full md:h-32 h-full w-[40%] "></div>
-                    <div>nnjnnj</div>
+                  <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                    <div className=" bg-white flex max-md:justify-center   items-center md:items-center md:w-full md:h-44 h-full w-[40%] ">
+                      <span className=" md:-rotate-90 h-fit whitespace-nowrap">
+                        Blog
+                      </span>
+                    </div>
+                    <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-11rem)]">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Our Work
+                      </span>
+                    </div>
                   </div>
                 ) : (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  md:transition-all md:ease-in-out">
-                    <div className=" bg-white md:w-full md:h-32 h-full w-[40%] "></div>
-                    <div className="  md:opacity-0  md:group-hover:opacity-100">
-                      Our Work
+                  <div className=" font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100 md:transition-all md:ease-in-out ">
+                    <div className="  bg-white flex max-md:justify-center items-center  md:items-center md:w-full md:h-44 h-full w-[40%] ">
+                      <span className=" md:opacity-0  md:group-hover:opacity-100 duration-300  md:-rotate-90 h-fit whitespace-nowrap">
+                        Blog
+                      </span>
+                    </div>
+                    <div className="  md:opacity-0  md:group-hover:opacity-100 duration-300 overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-11rem)]">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Our Work
+                      </span>
                     </div>
                   </div>
                 )
@@ -103,21 +117,35 @@ export default function Home() {
                   className={`flex flex-col  ${
                     menuScreens === "work" ? "opacity-100 " : "opacity-0 "
                   } 
-             } h-full w-full max-md:max-h-[calc(100vh-15rem)] `}
+             } h-full w-full max-md:max-h-[calc(100vh-11rem)] `}
                 >
                   <div
-                    className={` bg-white md:w-full md:h-32
-                  ${menuScreens === "work" ? "w-full h-24 " : "w-[40%] h-full "}
+                    className={` bg-white md:w-full 
+                  ${
+                    menuScreens === "work"
+                      ? "w-full h-32 md:h-44 "
+                      : "w-[40%] h-full "
+                  }
                   `}
-                  ></div>
-                  <div className=" w-full h-full overflow-scroll ">
+                  >
+                    blog coming soon
+                  </div>
+                  <div className=" w-full h-[calc(100%-7rem)] md:h-[calc(100%-11rem)] overflow-hidden ">
                     <Gallery />
                   </div>
                 </div>
               ) : (
-                <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                  <div className=" bg-white md:w-full md:h-32 h-full w-[40%] "></div>
-                  <div>our work</div>
+                <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                  <div className=" bg-white  items-center  flex max-md:justify-center md:items-center md:w-full md:h-44 h-full w-[40%] ">
+                    <span className=" md:-rotate-90 h-fit whitespace-nowrap">
+                      Blog
+                    </span>
+                  </div>
+                  <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-11rem)]">
+                    <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                      Our Work
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
@@ -133,20 +161,26 @@ export default function Home() {
                        ? "group md:w-20 md:h-full w-full h-14 "
                        : "md:w-4 group md:hover:w-20 md:h-full w-full h-14 "
                      : menuScreens === "services"
-                     ? "group w-full h-full max-md:max-h-[calc(100vh-15rem)] "
+                     ? "group w-full h-full max-md:max-h-[calc(100vh-11rem)] "
                      : "group md:w-20 md:h-full w-full h-14 "
                  }
                  `}
             >
               {menuScreens === "home" ? (
                 menu ? (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                    <div>Services</div>
+                  <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                    <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-full">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Services
+                      </span>
+                    </div>
                   </div>
                 ) : (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  md:transition-all md:ease-in-out">
-                    <div className="  md:opacity-0  md:group-hover:opacity-100">
-                      Services
+                  <div className=" font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100 md:transition-all md:ease-in-out ">
+                    <div className="  md:opacity-0  md:group-hover:opacity-100 duration-300 overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-full">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Services
+                      </span>
                     </div>
                   </div>
                 )
@@ -155,13 +189,17 @@ export default function Home() {
                   className={`flex flex-col  ${
                     menuScreens === "services" ? "opacity-100 " : "opacity-0 "
                   } 
-             } h-full w-full  max-md:max-h-[calc(100vh-15rem)] `}
+             } h-full w-full  max-md:max-h-[calc(100vh-11rem)] `}
                 >
                   <Services />
                 </div>
               ) : (
-                <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                  <div>Services</div>
+                <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                  <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-full">
+                    <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                      Services
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
@@ -177,23 +215,37 @@ export default function Home() {
                           ? "group md:w-20 md:h-full w-full h-14 "
                           : "md:w-4 group md:hover:w-20 md:h-full w-full h-14 "
                         : menuScreens === "contact"
-                        ? "group w-full h-full max-md:max-h-[calc(100vh-15rem)] "
+                        ? "group w-full h-full max-md:max-h-[calc(100vh-11rem)] "
                         : "group md:w-20 md:h-full w-full h-14 "
                     }
                     `}
             >
               {menuScreens === "home" ? (
                 menu ? (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                    <div className=" h-full">nnjnnj</div>
-                    <div className=" bg-white md:w-full md:h-52 h-full w-[40%] "></div>
+                  <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                    <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-13rem)]">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Contact
+                      </span>
+                    </div>
+                    <div className=" bg-white flex max-md:justify-center   items-center md:items-center md:w-full md:h-52 h-full w-[40%] ">
+                      <span className=" md:-rotate-90 h-fit whitespace-nowrap">
+                        Team
+                      </span>
+                    </div>
                   </div>
                 ) : (
-                  <div className="  flex md:flex-col w-full h-full items-center justify-start  md:transition-all md:ease-in-out">
-                    <div className="  md:opacity-0 h-full  md:group-hover:opacity-100">
-                      Contact
+                  <div className=" font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100 md:transition-all md:ease-in-out ">
+                    <div className="  md:opacity-0  md:group-hover:opacity-100 duration-300 overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-13rem)]">
+                      <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                        Contact
+                      </span>
                     </div>
-                    <div className=" bg-white md:w-full md:h-52 h-full w-[40%] "></div>
+                    <div className="  bg-white group flex max-md:justify-center items-center  md:items-center md:w-full md:h-52 h-full w-[40%] ">
+                      <span className=" md:opacity-0  md:group-hover:opacity-100 duration-300  md:-rotate-90  h-fit whitespace-nowrap">
+                        Team
+                      </span>
+                    </div>
                   </div>
                 )
               ) : menuScreens === "contact" ? (
@@ -201,26 +253,40 @@ export default function Home() {
                   className={`flex flex-col  ${
                     menuScreens === "contact" ? "opacity-100 " : "opacity-0 "
                   } 
-             } h-full w-full  max-md:max-h-[calc(100vh-15rem)] `}
+             } h-full w-full  max-md:max-h-[calc(100vh-11rem)] `}
                 >
-                  <div className=" h-full w-full overflow-scroll">
+                  <div
+                    className="
+                   h-[calc(100%-8rem)] md:h-[calc(100%-13rem)]
+                  w-full overflow-scroll"
+                  >
                     <Contact />
                   </div>
 
                   <div
-                    className={` bg-white md:w-full md:h-52 
+                    className={` bg-white md:w-full 
                   ${
                     menuScreens === "contact"
-                      ? "w-full h-32 "
+                      ? "w-full h-32 md:h-52  "
                       : "w-[40%] h-full "
                   }
                   `}
-                  ></div>
+                  >
+                    <Team />
+                  </div>
                 </div>
               ) : (
-                <div className="  flex md:flex-col w-full h-full items-center justify-start  opacity-100">
-                  <div className=" h-full">Contact</div>
-                  <div className=" bg-white md:w-full md:h-52 h-full w-[40%] "></div>
+                <div className="  font-sans font-bold  text-2xl md:text-3xl overflow-hidden   flex md:flex-col w-full h-full items-center justify-start  opacity-100">
+                  <div className="  overflow-hidden flex max-md:w-full max-md:justify-center md:items-end md:h-[calc(100%-13rem)]">
+                    <span className=" md:-rotate-90 md:mb-24 h-fit whitespace-nowrap">
+                      Contact
+                    </span>
+                  </div>
+                  <div className=" bg-white  items-center  flex max-md:justify-center md:items-center md:w-full md:h-52 h-full w-[40%] ">
+                    <span className=" md:-rotate-90 h-fit whitespace-nowrap">
+                      Team
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
