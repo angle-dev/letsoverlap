@@ -3,26 +3,39 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <div className="   flex justify-between items-center w-full">
-      <div className="grid grid-cols-4 gap-1 p-2 max-h-[150px] w-full  ">
-        <div className=" flex flex-col   w-full h-full ">
-          <div className="relative  p-3  aspect-[3/5]  w-[90px]  h-[100px]">
-            <Image src="/Rectangle 22.png" fill alt="team" />
+    <div className=" flex justify-between items-center h-full">
+      <div className="   flex  gap-3 p-1 md:px-2  h-full w-9/12 overflow-x-auto overflow-y-hidden">
+        <div className=" flex flex-col gap-2  justify-center   ">
+          <div className="relative    h-[60px] w-[60px]   md:h-[126px]  md:w-[96px]  ">
+            <Image
+              src="/Rectangle 22.png"
+              fill
+              className="rounded-full md:rounded-sm"
+              alt="team"
+            />
           </div>
-
-          <span className=" font-bold text-sm">Name</span>
-          <span className="  text-sm">Designation</span>
+          <div>
+            <p className=" font-bold text-sm">Name</p>
+            <p className="  text-xs">Designation</p>
+          </div>
         </div>
-        <div className=" flex flex-col w-full h-full  ">
-          <div className="relative p-3 aspect-[3/5] w-[90px]  h-[100px]">
-            <Image src="/Rectangle 22.png" fill alt="team" />
+        <div className=" flex flex-col gap-2  justify-center   ">
+          <div className="relative    h-[60px] w-[60px]   md:h-[126px]  md:w-[96px]  ">
+            <Image
+              src="/Rectangle 22.png"
+              fill
+              className="rounded-full md:rounded-sm"
+              alt="team"
+            />
           </div>
-          <span className=" font-bold text-sm">Name</span>
-          <span className="  text-sm">Designation</span>
+          <div>
+            <p className=" font-bold text-sm">Name</p>
+            <p className="  text-xs">Designation</p>
+          </div>
         </div>
       </div>
-      <div className=" -rotate-90 absolute right-0 ">
-        <span>Our Team</span>
+      <div className=" font-bold flex items-center justify-center w-fit  text-2xl md:text-3xl">
+        <p className=" -rotate-90"> Our Team</p>
       </div>
     </div>
   );
