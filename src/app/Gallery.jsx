@@ -6,29 +6,20 @@ import { wrap } from "popmotion";
 import { images } from "./image-data.js";
 
 const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    };
+  enter: {
+    opacity: 0,
   },
+
   center: {
     zIndex: 1,
     x: 0,
     opacity: 1,
   },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-    };
-  },
-};
+  exit: {
+    zIndex: 0,
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
+    opacity: 0,
+  },
 };
 
 export default function Gallery() {
@@ -42,30 +33,23 @@ export default function Gallery() {
 
   return (
     <div className="   h-full   overflow-y-auto mt-2  ">
-      <div className=" w-[90%] m-auto h-fit flex flex-col items-center ">
-        <motion.img
-          key={page}
-          className=" aspect-video  object-cover w-full max-w-5xl"
-          src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
+      <div className=" w-[90%] m-auto h-fit flex relative  flex-col items-center ">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={page}
+            className=" absolute  aspect-video w-[100%] max-w-5xl "
+            src={images[imageIndex]}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.75 },
+            }}
+          />
+          <div className=" relative  aspect-video w-[100%] max-w-5xl "></div>
+        </AnimatePresence>
 
         <div className=" w-[100%] max-w-5xl m-auto h-[100%] flex   bg-white">
           <div
