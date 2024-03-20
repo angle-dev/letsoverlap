@@ -1,27 +1,151 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HomeBanner from "./HomeBanner";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  animate,
-  useAnimation,
-} from "framer-motion";
+
 import Contact from "./Contact";
 import Team from "./Team";
 import Services from "./Services";
 import Gallery from "./Gallery";
+import Blog from "./Blog";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
   const [menuScreens, setMenuScreens] = useState("home");
+  const [mobile, setMobile] = useState(false);
+  const [mobilePage, setMobilePage] = useState("home");
   return (
     <div className=" w-full overflow-hidden h-full grid">
-      <div className=" w-full h-full">
-        {menuScreens === "home" ? <HomeBanner /> : null}
+      <div className="  w-full h-full">
+        {menuScreens === "home" ? (
+          <div className=" hidden md:block">
+            <HomeBanner />
+          </div>
+        ) : null}
 
-        <div className=" w-full h-full">
+        <div className=" block md:hidden">
+          <HomeBanner />
+        </div>
+
+        <div className=" fixed z-50 top-0 w-full h-14 flex px-2 justify-between items-center   md:hidden">
+          <div
+            onClick={() => {
+              setMobilePage("home");
+              setMobile(false);
+            }}
+          >
+            LOGO{" "}
+          </div>
+          <div onClick={() => setMobile(!mobile)} className=" text-white">
+            X
+          </div>
+          {mobile && (
+            <div className=" fixed top-14 flex flex-col left-0 h-[calc(100vh-3.5rem)] z-50  bg-red-200 w-full">
+              <div
+                onClick={() => {
+                  setMobilePage("ourwork");
+                  setMobile(false);
+                }}
+                className=" w-full h-full bg-primary-yellow flex items-center  text-3xl font-bold pl-3"
+              >
+                Our Work
+              </div>
+              <div
+                onClick={() => {
+                  setMobilePage("blogs");
+                  setMobile(false);
+                }}
+                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-3"
+              >
+                Blogs
+              </div>
+              <div
+                onClick={() => {
+                  setMobilePage("services");
+                  setMobile(false);
+                }}
+                className=" w-full h-full bg-primary-green  flex items-center  text-3xl font-bold pl-3"
+              >
+                Services
+              </div>
+              <div
+                onClick={() => {
+                  setMobilePage("ourteam");
+                  setMobile(false);
+                }}
+                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-3"
+              >
+                Our Team
+              </div>
+              <div
+                onClick={() => {
+                  setMobilePage("contact");
+                  setMobile(false);
+                }}
+                className=" w-full h-full bg-primary-red  flex items-center  text-3xl font-bold pl-3"
+              >
+                Contact
+              </div>
+            </div>
+          )}
+
+          {mobile === false &&
+            (mobilePage === "ourwork" ? (
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-yellow flex items-center  text-3xl font-bold pl-3">
+                <Gallery />
+              </div>
+            ) : mobilePage === "blogs" ? (
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white  flex items-center  text-3xl font-bold pl-3">
+                <Blog />
+              </div>
+            ) : mobilePage === "services" ? (
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-green  flex items-center  text-3xl font-bold pl-3">
+                <Services />
+              </div>
+            ) : mobilePage === "ourteam" ? (
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white flex items-center  text-3xl font-bold pl-3">
+                <Team />
+              </div>
+            ) : mobilePage === "contact" ? (
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-red  flex items-center  text-3xl font-bold pl-3">
+                <Contact />
+              </div>
+            ) : null)}
+        </div>
+
+        <div className="   absolute top-10 left-2 md:hidden">
+          <div className=" flex-col  pointer-events-none h-full items-end flex justify-between w-full py-8">
+            <div className="text-gray-300 md:text-base flex   items-end  text-xs  md:max-w-md  max-w-60  pointer-events-none  flex-col gap-1.5">
+              <span className=" text-primary-white mb-2  font-bold">
+                OVERLAP is a global 360-degree Digital Marketing Agency,
+                specializing in profitable Digital Marketing solutions for
+                eBusinesses.
+              </span>
+              <span>
+                Since 2017, OVERLAP leads in large-scale projects with
+                innovative digital marketing. Our mission is to enhance business
+                value through creative and effective use of Digital Marketing
+                Technologies.
+              </span>
+            </div>
+            {menu ? (
+              <div
+                onClick={() => setMenu(false)}
+                className=" text-gray-100 mr-4 hidden md:block pointer-events-auto cursor-pointer"
+              >
+                {"X"}
+              </div>
+            ) : (
+              <div
+                onClick={() => setMenu(true)}
+                className=" text-gray-100 mr-4 hidden md:block pointer-events-auto cursor-pointer"
+              >
+                {"<<<"}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className=" w-full  hidden md:block h-full">
           <div
             className={`fixed   top-0  md:justify-end left-0 w-full h-full z-10 flex-col-reverse    justify-end  pointer-events-none flex md:flex-row
           ${menuScreens == "home" ? "" : "bg-black"}
@@ -128,7 +252,7 @@ export default function Home() {
                   }
                   `}
                   >
-                    blog coming soon
+                    <Blog />
                   </div>
                   <div className=" w-full h-[calc(100%-7rem)] md:h-[calc(100%-11rem)] overflow-hidden ">
                     <Gallery />

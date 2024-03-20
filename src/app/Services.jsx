@@ -5,10 +5,10 @@ export default function Team() {
   return (
     <div className="  h-full overflow-y-auto">
       <span className="text-center w-full flex mt-7 mb-7 items-center justify-center text-3xl font-bold">
-        Services
+        What we can do for you
       </span>
       <div class="grid w-full gap-2 items-center max-w-[98%]   m-auto justify-items-center p-2">
-        <div class="grid md:grid-cols-2  justify-items-center  gap-2 max-h-[90vh] overflow-hidden ">
+        <div class="grid md:grid-cols-2  justify-items-center  gap-2 verflow-hidden ">
           <div class="flex flex-col bg-primary-white hover:bg-primary-navy text-primary-navy hover:text-[#6AE3F3] p-4 rounded-md max-w-[550px] max-h-[42vh] h-full w-full ">
             <div className=" relative  max-h-[42vh] w-full aspect-video">
               <Image src="/ser1.png" alt="" fill className=" " />

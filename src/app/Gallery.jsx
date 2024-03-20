@@ -33,6 +33,15 @@ export default function Gallery() {
 
   return (
     <div className="   h-full   overflow-y-auto mt-2  ">
+      <div className="w-[90%]  mb-2 m-auto h-fit flex relative flex-col md:flex-row  items-center justify-between ">
+        <div className=" text-3xl font-bold ">This is our work</div>
+        <div className=" text-xl font-bold flex bg-white ">
+          <div className="px-2 text-primary-yellow bg-primary-navy">All</div>
+          <div className="px-2">Branding</div>
+          <div className="px-2">Digital marketing</div>
+          <div className="px-2">SEO</div>
+        </div>
+      </div>
       <div className=" w-[90%] m-auto h-fit flex relative  flex-col items-center ">
         <AnimatePresence initial={false}>
           <motion.img
