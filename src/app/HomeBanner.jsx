@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import useWindowSize from "./useWindowSize";
+import Image from "next/image";
 
 const HomeBanner = () => {
   const size = useWindowSize();
@@ -102,7 +103,10 @@ const HomeBanner = () => {
           <div className=" w-2 h-2 pointer-events-none"></div>
           <div className=" max-w-sm"></div>
         </div>
-        <div>
+        <div className="top-0 md:block hidden left-0 p-8 absolute">
+          <Image src="/Logo.png" width={151} height={39} alt="logo" />
+        </div>
+        <div className=" mb-8 md:ml-8">
           <motion.h1
             className="  font-serif   text-4xl md:text-6xl lg:text-8xl ml-4  pointer-events-none"
             variants={container}

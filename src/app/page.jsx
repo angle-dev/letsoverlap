@@ -7,9 +7,12 @@ import Team from "./Team";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import Blog from "./Blog";
+import ContactMobile from "./ContactMobile";
+import TeamMobile from "./TeamMobile";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [menuScreens, setMenuScreens] = useState("home");
   const [mobile, setMobile] = useState(false);
   const [mobilePage, setMobilePage] = useState("home");
@@ -26,33 +29,91 @@ export default function Home() {
           <HomeBanner />
         </div>
 
-        <div className=" fixed z-50 top-0 w-full h-14 flex px-2 justify-between items-center   md:hidden">
+        <div className=" fixed z-50 top-0 w-full h-24 flex px-2 justify-between items-center md:hidden">
           <div
             onClick={() => {
               setMobilePage("home");
               setMobile(false);
+              setMobileMenu(false);
             }}
           >
-            <div className="relative h-12  aspect-video">
+            <div className="relative h-14 w-full aspect-video">
               <Image
                 fill
                 src="/Logo.png"
-                className=" object-contain  object-left  w-full h-full"
+                className=" object-contain pl-4 w-full h-full"
                 alt="logo"
               />
             </div>
           </div>
-          <div onClick={() => setMobile(!mobile)} className=" text-white">
-            X
-          </div>
+          {mobileMenu ? (
+            <div
+              className="pr-4"
+              onClick={() => {
+                setMobile(false);
+                setMobileMenu(false);
+              }}
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.37236 23.8213L6.93831 17.2554L17.2553 6.93843L23.8212 0.372482C24.318 -0.124044 25.1307 -0.124044 25.6272 0.372757C26.124 0.869283 26.124 1.68194 25.6275 2.17874L19.0615 8.74469L8.74457 19.0616L2.17862 25.6276C1.68181 26.1241 0.869161 26.1241 0.372635 25.6272C-0.124166 25.1308 -0.124166 24.3181 0.37236 23.8213Z"
+                  fill="#FDFFFC"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M23.8213 25.6277L17.2553 19.0618L6.9383 8.74481L0.372351 2.17886C-0.124174 1.68206 -0.124174 0.869405 0.372696 0.37288C0.869221 -0.123922 1.68187 -0.123922 2.17868 0.372604L8.74463 6.93856L19.0616 17.2555L25.6275 23.8215C26.1241 24.3183 26.1241 25.1309 25.6273 25.6274C25.1307 26.1242 24.3181 26.1242 23.8213 25.6277Z"
+                  fill="#FDFFFC"
+                />
+              </svg>
+            </div>
+          ) : (
+            <div
+              className="pr-4"
+              onClick={() => {
+                setMobile(true);
+                setMobileMenu(true);
+              }}
+            >
+              <svg
+                width="33"
+                height="24"
+                viewBox="0 0 33 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M31.625 13.2917H1.375C0.615997 13.2917 0 12.6758 0 11.9167C0 11.1577 0.615997 10.5417 1.375 10.5417H31.625C32.384 10.5417 33 11.1577 33 11.9167C33 12.6758 32.384 13.2917 31.625 13.2917Z"
+                  fill="#FDFFFC"
+                />
+                <path
+                  d="M31.625 2.75H1.375C0.615997 2.75 0 2.134 0 1.375C0 0.615997 0.615997 0 1.375 0H31.625C32.384 0 33 0.615997 33 1.375C33 2.134 32.384 2.75 31.625 2.75Z"
+                  fill="#FDFFFC"
+                />
+                <path
+                  d="M31.625 23.8333H1.375C0.615997 23.8333 0 23.2173 0 22.4583C0 21.6992 0.615997 21.0833 1.375 21.0833H31.625C32.384 21.0833 33 21.6992 33 22.4583C33 23.2173 32.384 23.8333 31.625 23.8333Z"
+                  fill="#FDFFFC"
+                />
+              </svg>
+            </div>
+          )}
           {mobile && (
-            <div className=" fixed top-14 flex flex-col left-0 h-[calc(100vh-3.5rem)] z-50  bg-red-200 w-full">
+            <div className=" fixed top-24 flex flex-col left-0 h-[calc(100vh-6rem)] z-50  bg-red-200 w-full">
               <div
                 onClick={() => {
                   setMobilePage("ourwork");
                   setMobile(false);
+                  setMobileMenu(false);
                 }}
-                className=" w-full h-full bg-primary-yellow flex items-center  text-3xl font-bold pl-3"
+                className=" w-full h-full pl-4 bg-primary-yellow flex items-center  text-3xl font-bold"
               >
                 Our Work
               </div>
@@ -60,8 +121,9 @@ export default function Home() {
                 onClick={() => {
                   setMobilePage("blogs");
                   setMobile(false);
+                  setMobileMenu(false);
                 }}
-                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-3"
+                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
               >
                 Blogs
               </div>
@@ -69,8 +131,9 @@ export default function Home() {
                 onClick={() => {
                   setMobilePage("services");
                   setMobile(false);
+                  setMobileMenu(false);
                 }}
-                className=" w-full h-full bg-primary-green  flex items-center  text-3xl font-bold pl-3"
+                className=" w-full h-full bg-primary-green  flex items-center  text-3xl font-bold pl-4"
               >
                 Services
               </div>
@@ -78,8 +141,9 @@ export default function Home() {
                 onClick={() => {
                   setMobilePage("ourteam");
                   setMobile(false);
+                  setMobileMenu(false);
                 }}
-                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-3"
+                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
               >
                 Our Team
               </div>
@@ -87,8 +151,9 @@ export default function Home() {
                 onClick={() => {
                   setMobilePage("contact");
                   setMobile(false);
+                  setMobileMenu(false);
                 }}
-                className=" w-full h-full bg-primary-red  flex items-center  text-3xl font-bold pl-3"
+                className=" w-full h-full bg-primary-red  flex items-center  text-3xl font-bold pl-4"
               >
                 Contact
               </div>
@@ -97,29 +162,29 @@ export default function Home() {
 
           {mobile === false &&
             (mobilePage === "ourwork" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-yellow flex items-center  text-3xl font-bold ">
+              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-yellow flex items-center  text-3xl font-bold ">
                 <Gallery />
               </div>
             ) : mobilePage === "blogs" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white  flex items-center  text-3xl font-bold ">
+              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white  flex items-center  text-3xl font-bold ">
                 <Blog />
               </div>
             ) : mobilePage === "services" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-green  flex items-center  text-3xl font-bold ">
+              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-green  flex items-center  text-3xl font-bold ">
                 <Services />
               </div>
             ) : mobilePage === "ourteam" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white flex items-center  text-3xl font-bold ">
-                <Team />
+              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white flex items-center  text-3xl font-bold ">
+                <TeamMobile />
               </div>
             ) : mobilePage === "contact" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-red  flex items-center  text-3xl font-bold ">
-                <Contact />
+              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-red  flex items-center  text-3xl font-bold ">
+                <ContactMobile />
               </div>
             ) : null)}
         </div>
 
-        <div className="   absolute top-10 left-2 md:hidden">
+        <div className="   absolute top-36 left-28 md:hidden">
           <div className=" flex-col  pointer-events-none h-full items-end flex justify-between w-full py-8">
             <div className="text-gray-300 md:text-base flex   items-end  text-xs  md:max-w-md  max-w-60  pointer-events-none  flex-col gap-1.5">
               <span className=" text-primary-white mb-2  font-bold">
@@ -178,14 +243,54 @@ export default function Home() {
                     onClick={() => setMenu(false)}
                     className=" text-gray-100 mr-4 hidden md:block pointer-events-auto cursor-pointer"
                   >
-                    {"X"}
+                    <svg
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.37236 23.8213L6.93831 17.2554L17.2553 6.93843L23.8212 0.372482C24.318 -0.124044 25.1307 -0.124044 25.6272 0.372757C26.124 0.869283 26.124 1.68194 25.6275 2.17874L19.0615 8.74469L8.74457 19.0616L2.17862 25.6276C1.68181 26.1241 0.869161 26.1241 0.372635 25.6272C-0.124166 25.1308 -0.124166 24.3181 0.37236 23.8213Z"
+                        fill="#FDFFFC"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M23.8213 25.6277L17.2553 19.0618L6.9383 8.74481L0.372351 2.17886C-0.124174 1.68206 -0.124174 0.869405 0.372696 0.37288C0.869221 -0.123922 1.68187 -0.123922 2.17868 0.372604L8.74463 6.93856L19.0616 17.2555L25.6275 23.8215C26.1241 24.3183 26.1241 25.1309 25.6273 25.6274C25.1307 26.1242 24.3181 26.1242 23.8213 25.6277Z"
+                        fill="#FDFFFC"
+                      />
+                    </svg>
                   </div>
                 ) : (
                   <div
                     onClick={() => setMenu(true)}
                     className=" text-gray-100 mr-4 hidden md:block pointer-events-auto cursor-pointer"
                   >
-                    {"<<<"}
+                    <svg
+                      width="36"
+                      height="26"
+                      viewBox="0 0 36 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 13C10.9991 12.8445 11.0286 12.6904 11.0866 12.5465C11.1446 12.4025 11.2301 12.2716 11.3382 12.1612L23.0009 0.347434C23.2205 0.124976 23.5184 -6.94515e-08 23.829 -5.11877e-08C24.1395 -3.29239e-08 24.4374 0.124976 24.657 0.347434C24.8766 0.569892 25 0.87161 25 1.18621C25 1.50082 24.8766 1.80253 24.657 2.02499L13.8107 13L24.657 23.975C24.8766 24.1975 25 24.4992 25 24.8138C25 25.1284 24.8766 25.4301 24.657 25.6526C24.4374 25.875 24.1395 26 23.829 26C23.5184 26 23.2205 25.875 23.0009 25.6526L11.3382 13.8388C11.2301 13.7284 11.1446 13.5975 11.0866 13.4535C11.0286 13.3096 10.9991 13.1555 11 13Z"
+                        fill="#FDFFFC"
+                        fill-opacity="0.75"
+                      />
+                      <path
+                        d="M22 13C21.9991 12.8445 22.0286 12.6904 22.0866 12.5465C22.1446 12.4025 22.2301 12.2716 22.3382 12.1612L34.0009 0.347434C34.2205 0.124976 34.5184 -6.94515e-08 34.829 -5.11877e-08C35.1395 -3.29239e-08 35.4374 0.124976 35.657 0.347434C35.8766 0.569892 36 0.87161 36 1.18621C36 1.50082 35.8766 1.80253 35.657 2.02499L24.8107 13L35.657 23.975C35.8766 24.1975 36 24.4992 36 24.8138C36 25.1284 35.8766 25.4301 35.657 25.6526C35.4374 25.875 35.1395 26 34.829 26C34.5184 26 34.2205 25.875 34.0009 25.6526L22.3382 13.8388C22.2301 13.7284 22.1446 13.5975 22.0866 13.4535C22.0286 13.3096 21.9991 13.1555 22 13Z"
+                        fill="#FDFFFC"
+                      />
+                      <path
+                        d="M2.04126e-05 13C-0.000866498 12.8445 0.0285515 12.6904 0.0865902 12.5465C0.14463 12.4025 0.230148 12.2716 0.338239 12.1612L12.0009 0.347434C12.2205 0.124976 12.5184 -6.94515e-08 12.829 -5.11877e-08C13.1395 -3.29239e-08 13.4374 0.124976 13.657 0.347434C13.8766 0.569892 14 0.87161 14 1.18621C14 1.50082 13.8766 1.80253 13.657 2.02499L2.81072 13L13.657 23.975C13.8766 24.1975 14 24.4992 14 24.8138C14 25.1284 13.8766 25.4301 13.657 25.6526C13.4374 25.875 13.1395 26 12.829 26C12.5184 26 12.2205 25.875 12.0009 25.6526L0.338239 13.8388C0.230148 13.7284 0.14463 13.5975 0.0865902 13.4535C0.0285515 13.3096 -0.000866511 13.1555 2.04126e-05 13Z"
+                        fill="#FDFFFC"
+                        fill-opacity="0.5"
+                      />
+                    </svg>
                   </div>
                 )}
               </div>
