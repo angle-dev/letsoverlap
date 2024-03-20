@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HomeBanner from "./HomeBanner";
-
+import Image from "next/image";
 import Contact from "./Contact";
 import Team from "./Team";
 import Services from "./Services";
@@ -33,7 +33,14 @@ export default function Home() {
               setMobile(false);
             }}
           >
-            LOGO{" "}
+            <div className="relative h-12  aspect-video">
+              <Image
+                fill
+                src="/Logo.png"
+                className=" object-contain  object-left  w-full h-full"
+                alt="logo"
+              />
+            </div>
           </div>
           <div onClick={() => setMobile(!mobile)} className=" text-white">
             X
@@ -90,23 +97,23 @@ export default function Home() {
 
           {mobile === false &&
             (mobilePage === "ourwork" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-yellow flex items-center  text-3xl font-bold pl-3">
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-yellow flex items-center  text-3xl font-bold ">
                 <Gallery />
               </div>
             ) : mobilePage === "blogs" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white  flex items-center  text-3xl font-bold pl-3">
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white  flex items-center  text-3xl font-bold ">
                 <Blog />
               </div>
             ) : mobilePage === "services" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-green  flex items-center  text-3xl font-bold pl-3">
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-green  flex items-center  text-3xl font-bold ">
                 <Services />
               </div>
             ) : mobilePage === "ourteam" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white flex items-center  text-3xl font-bold pl-3">
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-white flex items-center  text-3xl font-bold ">
                 <Team />
               </div>
             ) : mobilePage === "contact" ? (
-              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-red  flex items-center  text-3xl font-bold pl-3">
+              <div className=" w-full fixed top-14 left-0 h-[calc(100vh-3.5rem)] bg-primary-red  flex items-center  text-3xl font-bold ">
                 <Contact />
               </div>
             ) : null)}
