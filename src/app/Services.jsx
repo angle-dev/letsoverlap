@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <div className="  h-full overflow-y-auto">
+    <div className="  h-full animate-fade overflow-y-auto">
       <span className="md:text-center pt-6 w-full flex mt-7  items-center justify-center text-[32px] font-bold">
         What we can do for you
       </span>

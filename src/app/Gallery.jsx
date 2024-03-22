@@ -32,7 +32,7 @@ export default function Gallery() {
   };
 
   return (
-    <div className="   h-full   overflow-y-auto mt-2 flex  flex-col ">
+    <div className="   h-full animate-fade   overflow-y-auto mt-2 flex  flex-col ">
       <div className="w-[90%]  pt-6 m-auto h-fit flex relative flex-col md:flex-row  items-center justify-between ">
         <div className=" text-[32px] font-bold w-full text-left ">
           This is our work

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ContactMobile = () => {
   return (
-    <div className=" h-full overflow-y-hidden w-full px-3">
+    <div className=" h-full animate-fade overflow-y-hidden w-full px-3">
       <div className="flex flex-col w-full ">
         <span className=" mt-12 text-[32px] text-primary-navy md:p-9 p-2 font-bold">
           Let’s get in touch

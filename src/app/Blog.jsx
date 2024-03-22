@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Blog() {
   return (
-    <div className="md:flex   items-center justify-between px-2 h-full">
+    <div className="md:flex  animate-fade  items-center justify-between px-2 h-full">
       <div className="flex flex-col md:flex-row gap-2 md:items-center max-md:mt-2  md:justify-around px-2 h-full">
         <p className=" mt-9 w-full block md:hidden ">Blogs</p>
         <div className=" md:max-w-[40%] w-full justify-center mt-6 md:mt-0 items-center flex flex-col md:flex-row aspect-video gap-5">

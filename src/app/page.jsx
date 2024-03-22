@@ -9,6 +9,14 @@ import Gallery from "./Gallery";
 import Blog from "./Blog";
 import ContactMobile from "./ContactMobile";
 import TeamMobile from "./TeamMobile";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useAnimation,
+  AnimatePresence,
+} from "framer-motion";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -16,6 +24,9 @@ export default function Home() {
   const [menuScreens, setMenuScreens] = useState("home");
   const [mobile, setMobile] = useState(false);
   const [mobilePage, setMobilePage] = useState("home");
+
+  const controlsMobileMenu = useAnimation();
+
   return (
     <div className=" w-full overflow-hidden h-full grid">
       <div className="  w-full h-full">
@@ -105,83 +116,150 @@ export default function Home() {
               </svg>
             </div>
           )}
-          {mobile && (
-            <div className=" fixed top-24 flex flex-col left-0 h-[calc(100vh-6rem)] z-50  bg-red-200 w-full">
-              <div
-                onClick={() => {
-                  setMobilePage("ourwork");
-                  setMobile(false);
-                  setMobileMenu(false);
+          <AnimatePresence key="key">
+            {mobile && (
+              <motion.div
+                style={{
+                  willChange: "height",
+                  transform: "translateZ(0)",
+                  originY: 0,
                 }}
-                className=" w-full h-full pl-4 bg-primary-yellow flex items-center  text-3xl font-bold"
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                exit={{ scaleY: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="fixed top-24 flex h-[calc(100vh-6rem)] flex-col left-0  z-50  bg-gray-900 w-full"
               >
-                Our Work
-              </div>
-              <div
-                onClick={() => {
-                  setMobilePage("blogs");
-                  setMobile(false);
-                  setMobileMenu(false);
-                }}
-                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
-              >
-                Blogs
-              </div>
-              <div
-                onClick={() => {
-                  setMobilePage("services");
-                  setMobile(false);
-                  setMobileMenu(false);
-                }}
-                className=" w-full h-full bg-primary-green  flex items-center  text-3xl font-bold pl-4"
-              >
-                Services
-              </div>
-              <div
-                onClick={() => {
-                  setMobilePage("ourteam");
-                  setMobile(false);
-                  setMobileMenu(false);
-                }}
-                className=" w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
-              >
-                Our Team
-              </div>
-              <div
-                onClick={() => {
-                  setMobilePage("contact");
-                  setMobile(false);
-                  setMobileMenu(false);
-                }}
-                className=" w-full h-full bg-primary-red  flex items-center  text-3xl font-bold pl-4"
-              >
-                Contact
-              </div>
-            </div>
-          )}
+                <motion.div
+                  onClick={() => {
+                    setMobilePage("ourwork");
+                    setMobile(false);
+                    setMobileMenu(false);
+                  }}
+                  className=" cursor-pointer w-full h-full pl-4 bg-primary-yellow flex items-center  text-3xl font-bold"
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.35,
 
-          {mobile === false &&
-            (mobilePage === "ourwork" ? (
-              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-yellow flex items-center  text-3xl font-bold ">
-                <Gallery />
-              </div>
-            ) : mobilePage === "blogs" ? (
-              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white  flex items-center  text-3xl font-bold ">
-                <Blog />
-              </div>
-            ) : mobilePage === "services" ? (
-              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-green  flex items-center  text-3xl font-bold ">
-                <Services />
-              </div>
-            ) : mobilePage === "ourteam" ? (
-              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white flex items-center  text-3xl font-bold ">
-                <TeamMobile />
-              </div>
-            ) : mobilePage === "contact" ? (
-              <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-red  flex items-center  text-3xl font-bold ">
-                <ContactMobile />
-              </div>
-            ) : null)}
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Our Work
+                  </motion.span>
+                </motion.div>
+                <motion.div
+                  onClick={() => {
+                    setMobilePage("blogs");
+                    setMobile(false);
+                    setMobileMenu(false);
+                  }}
+                  className=" cursor-pointer w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.35,
+
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Blogs
+                  </motion.span>
+                </motion.div>
+                <motion.div
+                  onClick={() => {
+                    setMobilePage("services");
+                    setMobile(false);
+                    setMobileMenu(false);
+                  }}
+                  className=" cursor-pointer w-full h-full bg-primary-green  flex items-center  text-3xl font-bold pl-4"
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.35,
+
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Services
+                  </motion.span>
+                </motion.div>
+                <motion.div
+                  onClick={() => {
+                    setMobilePage("ourteam");
+                    setMobile(false);
+                    setMobileMenu(false);
+                  }}
+                  className=" cursor-pointer w-full h-full bg-white  flex items-center  text-3xl font-bold pl-4"
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.35,
+
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Our Team
+                  </motion.span>
+                </motion.div>
+                <motion.div
+                  onClick={() => {
+                    setMobilePage("contact");
+                    setMobile(false);
+                    setMobileMenu(false);
+                  }}
+                  className=" cursor-pointer w-full h-full bg-primary-red  flex items-center  text-3xl font-bold pl-4"
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.35,
+
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Contact
+                  </motion.span>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {mobilePage === "ourwork" ? (
+            <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-yellow flex items-center  text-3xl font-bold ">
+              <Gallery />
+            </div>
+          ) : mobilePage === "blogs" ? (
+            <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white  flex items-center  text-3xl font-bold ">
+              <Blog />
+            </div>
+          ) : mobilePage === "services" ? (
+            <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-green  flex items-center  text-3xl font-bold ">
+              <Services />
+            </div>
+          ) : mobilePage === "ourteam" ? (
+            <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-white flex items-center  text-3xl font-bold ">
+              <TeamMobile />
+            </div>
+          ) : mobilePage === "contact" ? (
+            <div className=" w-full fixed top-24 left-0 h-[calc(100vh-6rem)] bg-primary-red  flex items-center  text-3xl font-bold ">
+              <ContactMobile />
+            </div>
+          ) : null}
         </div>
 
         <div className="   absolute top-36 left-28 md:hidden">

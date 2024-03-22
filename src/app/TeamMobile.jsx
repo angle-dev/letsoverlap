@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TeamMobile() {
   return (
-    <div className="h-full w-full px-8">
+    <div className="h-full animate-fade w-full px-8">
       <div className="flex gap-2 ">
         <p className=" mt-9">Our Team</p>
       </div>

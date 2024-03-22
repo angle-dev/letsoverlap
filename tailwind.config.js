@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        fade: "fadeIn 1s ease-in-out",
+      },
+
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+
       fontFamily: {
         sans: ["Work Sans"],
         serif: ["Georgia"],
